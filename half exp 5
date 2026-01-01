@@ -1,0 +1,33 @@
+#include<stdio.h>
+struct Book
+{
+char title[50];
+char author[50];
+float price;
+int pages;
+};
+int main()
+{
+    struct Book b[10];
+    int n=0,choice,i,pos;
+    do  
+{
+    printf("\n---Book Menu---\n");
+    printf("1.Add Book\n");
+    printf("2.Display Books\n");
+    printf("3.Update Book\n");
+    printf("4.Delete Book\n");
+    printf("5.Exit\n");
+    printf("Enter choice:");
+    scanf("%d",&choice);
+}
+switch(choice)
+{
+    case 1://Add
+    printf("Enter title:");
+    scanf("%s",b[n],title);
+    printf("Enter Author:");
+    scanf("")
+}
+
+    
