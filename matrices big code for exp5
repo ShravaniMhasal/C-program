@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int r, c, i, j;
+    int **A, **B, **Sum;
+
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    // Allocate memory for matrices
+    A = (int **)malloc(r * sizeof(int *));
+    B = (int **)malloc(r * sizeof(int *));
+    Sum = (int **)malloc(r * sizeof(int *));
+
+    for (i = 0; i < r; i++)
+    {
+        A[i] = (int *)malloc(c * sizeof(int));
+        B[i] = (int *)malloc(c * sizeof(int));
+        Sum[i] = (int *)malloc(c * sizeof(int));
+    }
+
+    // Input matrix A
+    printf("Enter elements of matrix A:\n");
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++)
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Input matrix B
+    printf("Enter elements of matrix B:\n");
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++)
+        {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Matrix addition
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++)
+        {
+            Sum[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    // Display result
+    printf("Sum of matrices:\n");
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++)
+        {
+            printf("%d ", Sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Free allocated memory
+    for (i = 0; i < r; i++)
+    {
+        free(A[i]);
+        free(B[i]);
+        free(Sum[i]);
+    }
+    free(A);
+    free(B);
+    free(Sum);
+
+    return 0;
+}
